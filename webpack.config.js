@@ -26,10 +26,31 @@ module.exports = {
     path: path.join(__dirname, "build"),
     filename: "[name].bundle.js"
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        // Use "exclude" with a regular expression to
+        // files that should be ignored by this loader.
+        // Notablly, we should always ignore node_modules
+        loader: "babel-loader"
+      },
+      {
+        test: /\.(png|jpg|gif|webp|svg|jpeg)$/,
+        loader: "file-loader",
+        options: {
+          outputPath: "images/"
+        }
+      }
+    ]
+  },
   plugins: [
     new HTMLWebpackPlugin({
       title: "Webpack Demo", // <title>Webpack Demo</title>
       chunks: ["client"]
+      // "chunks" tells webpack which bundles to include
+      // in the html file
     })
   ]
 };

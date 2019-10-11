@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch"
+    "start": "npm run build && node dist/main.js",
+    "build": "webpack",
+    "build:watch": "webpack --watch"
   },
   "keywords": [],
   "author": "",

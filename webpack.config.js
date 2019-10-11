@@ -1,4 +1,5 @@
 const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 // entry points
 // https://webpack.js.org/concepts/entry-points/
@@ -24,5 +25,11 @@ module.exports = {
     // path.join(__dirname, 'build');
     path: path.join(__dirname, "build"),
     filename: "[name].bundle.js"
-  }
+  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      title: "Webpack Demo", // <title>Webpack Demo</title>
+      chunks: ["client"]
+    })
+  ]
 };

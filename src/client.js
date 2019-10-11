@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
-import "./css/master.css";
+import "./css/master.scss";
 import WebpackLogo from "./images/webpack_logo.png";
 
 const App = () => {
@@ -22,6 +22,9 @@ const App = () => {
           </Popup>
         </Marker>
       </Map>
+      <img src={WebpackLogo} />
+      <button className="btn btn-primary">Primary Button</button>
+      <button className="btn btn-defualt mySpBtn">Default Button</button>
     </div>
   );
 };

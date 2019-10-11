@@ -1,0 +1,13 @@
+$primary: teal;
+$mySpecialColor: maroon;
+$wColor: white;
+@import "bootstrap/scss/bootstrap";
+img {
+  border-radius: "20px";
+  border: "3px solid teal";
+}
+
+.mySpBtn {
+  background-color: $mySpecialColor;
+  color: $wColor;
+}
